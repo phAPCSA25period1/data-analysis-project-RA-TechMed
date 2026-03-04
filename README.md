@@ -173,12 +173,12 @@ Include counts, min/max values, averages, or any other numbers your algorithms p
 -->
 **My findings:**
 - Loaded 151 Pokémon from the CSV file.
-- Computed average Attack by type; Fire-type average = 84.2, Water-type average = 78.5, etc.
+- Computed average Attack by type; Fighting-type average ≈ 102.86, Fire-type ≈ 83.92, Water-type ≈ 69.89, etc.
 - Highest-attack Pokémon overall: Dragonite (Attack: 134).
-- Lowest-attack Pokémon overall: Magikarp (Attack: 10).
+- Lowest-attack Pokémon overall: Chansey (Attack: 5).
 
 **My answer to the guiding question:**
-Fire-type Pokémon have the highest average Attack stat (84.2), so the "Fire" category answers the question.
+Fighting-type Pokémon have the highest average Attack stat (about 102.86), so the "Fighting" category answers the question.
 
 <!--
 Replace the example values above with your real program results. The answer should be a clear sentence stating the result.
@@ -274,16 +274,19 @@ Allow the user to choose:
 
 - [x] Dataset selected
 - [x] Guiding question written
-- [ ] Class created with ≥3 attributes
-- [ ] File reading implemented
-- [ ] ArrayList/array of objects created
-- [ ] At least 2 analysis algorithms implemented
-- [ ] Findings printed
-- [ ] Javadoc comments added
+- [x] Class created with ≥3 attributes
+- [x] File reading implemented
+- [x] ArrayList/array of objects created
+- [x] At least 2 analysis algorithms implemented
+- [x] Findings printed
+- [x] Javadoc comments added
 - [ ] UML diagram included
-- [ ] Reflection completed
-- [ ] Code compiles & runs
+- [x] Reflection completed
+- [x] Code compiles & runs
 
+<!--
+Mark boxes as you complete them; the only item left is the UML diagram (you said you would add it yourself).
+-->
 <!--
 Mark boxes as you complete them; the first two are already done since they appear above in the README.
 -->

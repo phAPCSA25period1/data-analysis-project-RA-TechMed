@@ -9,22 +9,63 @@
  *  - Override toString() to display the object's data
  *  - Add Javadoc comments for the class and all methods
  */
+/**
+ * Represents a single Pokémon from the CSV file.
+ * Each object holds the Pokédex number, name, primary type, and base
+ * attack stat.  Additional fields could be added if needed.
+ */
 public class Data {
 
-    // TODO: Add at least 3 private attributes
-    // Example:
-    // private String name;
-    // private int population;
-    // private double value;
+    private int number;
+    private String name;
+    private String type;
+    private int attack;
 
+    /**
+     * Constructs a new data row representing a Pokémon.
+     *
+     * @param number the Pokédex number
+     * @param name   the Pokémon's name
+     * @param type   its primary type ("Type 1" column)
+     * @param attack the base Attack stat
+     */
+    public Data(int number, String name, String type, int attack) {
+        this.number = number;
+        this.name = name;
+        this.type = type;
+        this.attack = attack;
+    }
 
-    // TODO: Create a constructor that takes all attributes as parameters
+    /**
+     * Returns the Pokédex number.
+     */
+    public int getNumber() {
+        return number;
+    }
 
+    /**
+     * Returns the name of the Pokémon.
+     */
+    public String getName() {
+        return name;
+    }
 
-    // TODO: Add getters for attributes you need
+    /**
+     * Returns the primary type string.
+     */
+    public String getType() {
+        return type;
+    }
 
-    // TODO: Add other data analysis methods
+    /**
+     * Returns the base Attack stat.
+     */
+    public int getAttack() {
+        return attack;
+    }
 
-    // TODO: Override toString() to return a readable representation of your object
-
+    @Override
+    public String toString() {
+        return "#" + number + " " + name + " (" + type + ") attack=" + attack;
+    }
 }
