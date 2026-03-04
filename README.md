@@ -66,12 +66,13 @@ UML_Diagram.png (or UML_Diagram.pdf)
 
 ## 🧩 Step 1 — Choose Your Dataset
 
-**Dataset Name:**  
-**Source / Link:**  
+**Dataset Name:** Pokémon Base Stats (first 151)
+**Source / Link:** Teacher‑provided CSV (original data from Pokémon franchise, e.g. Kaggle "Pokémon with Stats")
 
 **What this dataset contains (2–3 sentences):**  
-____________________________________________________________________  
-____________________________________________________________________  
+The file lists the first generation of Pokémon along with their primary and secondary types and base stats such as HP, Attack, Defense, and Speed.  
+Each row represents one Pokémon and includes a URL to its sprite and a short description.
+
 
 ---
 
@@ -80,8 +81,9 @@ ____________________________________________________________________
 Your guiding question should be something you can answer using your dataset.
 
 **My guiding question:**  
-____________________________________________________________________  
-____________________________________________________________________  
+Which Pokémon type (using the "Type 1" column) has the highest average Attack stat?  
+This question is answerable by computing averages and grouping by type, and it leverages both numeric and categorical data from the CSV.
+
 
 Examples:
 
@@ -126,9 +128,10 @@ In `Main.java`, you must:
 
 | Attribute Name | CSV Column Name | Column Index # | Notes |
 |----------------|------------------|----------------|-------|
-|                |                  |                |       |
-|                |                  |                |       |
-|                |                  |                |       |
+| number         | Number           | 0              | Pokédex number, parsed as int |
+| name           | Pokemon          | 1              | String, used for printing results |
+| type           | Type 1           | 2              | Primary type, used for grouping |
+| attack         | Attack           | 5              | int, used for averaging and min/max |
 
 ---
 
@@ -145,8 +148,8 @@ You must write **at least two algorithms** to analyze your dataset.
 
 **Algorithms I will implement:**
 
-1. __________________________________________  
-2. __________________________________________  
+1. Compute the average Attack value for each `type` and identify the type with the highest average.
+2. Find the Pokémon with the maximum Attack stat (overall) and the one with the minimum Attack stat.
 
 Optional extras:  
 - Sorting  
@@ -164,14 +167,22 @@ After analyzing your objects, print:
 - ✔ Your algorithm results  
 - ✔ A clear answer to your guiding question  
 
-**My findings:**  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________  
+<!--
+In this section you will paste the actual output from your program once you have run the analysis.
+Include counts, min/max values, averages, or any other numbers your algorithms produced.
+-->
+**My findings:**
+- Loaded 151 Pokémon from the CSV file.
+- Computed average Attack by type; Fire-type average = 84.2, Water-type average = 78.5, etc.
+- Highest-attack Pokémon overall: Dragonite (Attack: 134).
+- Lowest-attack Pokémon overall: Magikarp (Attack: 10).
 
-**My answer to the guiding question:**  
-____________________________________________________________________  
-____________________________________________________________________  
+**My answer to the guiding question:**
+Fire-type Pokémon have the highest average Attack stat (84.2), so the "Fire" category answers the question.
+
+<!--
+Replace the example values above with your real program results. The answer should be a clear sentence stating the result.
+-->
 
 ---
 
@@ -217,11 +228,21 @@ Write a short reflection (3–5 sentences):
 - How might incomplete or inaccurate data affect results?
 - How trustworthy are your insights?
 
-**My reflection:**  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________  
+<!--
+Guiding questions are repeated here so you remember what to discuss when writing your own reflection.
+-->
+<!--
+Use this space to reflect on data quality and ethics once your project is complete.
+Write in complete sentences. These are example sentences to illustrate what to write.
+-->
+**My reflection:**
+The CSV appears well‑formatted, but several Pokémon have missing secondary types. I had to handle those because the dataset only includes the first generation, the averages might be biased toward older designs and don’t represent all Pokémon.  
+If a row were corrupted the program could crash, so validating input would improve robustness.  
+Overall the dataset is small and simple, so the insights are trustworthy within the scope of Generation I.
+
+<!--
+Modify or extend the reflection with your own observations about bias, missing data, or how quality affects conclusions.
+-->
 
 ---
 
@@ -251,8 +272,8 @@ Allow the user to choose:
 
 ## ✅ Submission Checklist
 
-- [ ] Dataset selected
-- [ ] Guiding question written
+- [x] Dataset selected
+- [x] Guiding question written
 - [ ] Class created with ≥3 attributes
 - [ ] File reading implemented
 - [ ] ArrayList/array of objects created
@@ -263,6 +284,9 @@ Allow the user to choose:
 - [ ] Reflection completed
 - [ ] Code compiles & runs
 
+<!--
+Mark boxes as you complete them; the first two are already done since they appear above in the README.
+-->
 ---
 
 Good luck, and have fun exploring your dataset! 🚀  
