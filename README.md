@@ -1,6 +1,7 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=22615674)
 # AP CSA Mini‑Project: Data Analysis with Arrays & File Input
 ### Using CSV Files • Arrays of Objects • Algorithms • Data Ethics & Quality
+<img width="618" height="177" alt="Screenshot 2026-03-04 9 33 53 PM" src="https://github.com/user-attachments/assets/457a8aa3-5f9f-44b9-ab77-a3b2ce6784d5" />
 
 ---
 
@@ -280,7 +281,7 @@ Allow the user to choose:
 - [x] At least 2 analysis algorithms implemented
 - [x] Findings printed
 - [x] Javadoc comments added
-- [ ] UML diagram included
+- [x] UML diagram included
 - [x] Reflection completed
 - [x] Code compiles & runs
 
