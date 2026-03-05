@@ -1,20 +1,12 @@
 /**
- * Represents one row from your dataset.
+ * Represents one row from the Pokémon dataset.
  *
- * TODO:
- *  - Rename the class to match your dataset (e.g., Pokemon, StateData, CountryStat)
- *  - Add at least 3 private attributes based on your CSV columns
- *  - Write a constructor that initializes all attributes
- *  - Add getter methods for the attributes you need in your analysis
- *  - Override toString() to display the object's data
- *  - Add Javadoc comments for the class and all methods
+ * This class was renamed from `Data` to `Pokemon` and now reflects the
+ * domain of the project. It holds information extracted from the CSV
+ * such as Pokédex number, name, type, and attack stat.  Additional
+ * attributes can be added as needed for further analysis.
  */
-/**
- * Represents a single Pokémon from the CSV file.
- * Each object holds the Pokédex number, name, primary type, and base
- * attack stat.  Additional fields could be added if needed.
- */
-public class Data {
+public class Pokemon {
 
     private int number;
     private String name;
@@ -29,7 +21,7 @@ public class Data {
      * @param type   its primary type ("Type 1" column)
      * @param attack the base Attack stat
      */
-    public Data(int number, String name, String type, int attack) {
+    public Pokemon(int number, String name, String type, int attack) {
         this.number = number;
         this.name = name;
         this.type = type;

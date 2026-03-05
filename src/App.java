@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * Main application for the Data Analysis Mini‑Project.  This class reads the
- * provided Pokémon CSV file, constructs a list of Data objects, and then
+ * provided Pokémon CSV file, constructs a list of {@link Pokemon} objects, and then
  * applies analysis methods (min/max, averages by type) to answer the guiding
  * question specified in the README.  All required features (file I/O,
  * algorithms, and printing results) are implemented.
@@ -19,7 +19,7 @@ public class App {
         // path to the dataset; adjust if you move the file
         File file = new File("/workspaces/data-analysis-project-RA-TechMed/pokemon (12).csv");
 
-        ArrayList<Data> pokedex = new ArrayList<>();
+        ArrayList<Pokemon> pokedex = new ArrayList<>();
 
         try (Scanner scanner = new Scanner(file)) {
             if (scanner.hasNextLine()) {
@@ -38,7 +38,7 @@ public class App {
                 String type = tokens[2].trim();
                 int attack = Integer.parseInt(tokens[5].trim());
 
-                Data p = new Data(number, name, type, attack);
+                Pokemon p = new Pokemon(number, name, type, attack);
                 pokedex.add(p);
             }
         } catch (FileNotFoundException e) {
@@ -48,8 +48,8 @@ public class App {
 
         // analysis calls
         int count = pokedex.size();
-        Data maxAtk = findPokemonWithMaxAttack(pokedex);
-        Data minAtk = findPokemonWithMinAttack(pokedex);
+        Pokemon maxAtk = findPokemonWithMaxAttack(pokedex);
+        Pokemon minAtk = findPokemonWithMinAttack(pokedex);
         Map<String, Double> averageByType = computeAverageAttackByType(pokedex);
         String highestAvgType = typeWithHighestAverage(averageByType);
 
@@ -62,12 +62,16 @@ public class App {
     }
 
     /**
-     * Returns the Pokémon with the highest attack value.
+     * Returns the Pokémon with the highest attack value from the provided list.
+     *
+     * @param list the list of Pokémon to search through
+     * @return the Pokémon object with the maximum attack statistic, or null if
+     *         the list is empty
      */
-    public static Data findPokemonWithMaxAttack(ArrayList<Data> list) {
+    public static Pokemon findPokemonWithMaxAttack(ArrayList<Pokemon> list) {
         if (list.isEmpty()) return null;
-        Data best = list.get(0);
-        for (Data p : list) {
+        Pokemon best = list.get(0);
+        for (Pokemon p : list) {
             if (p.getAttack() > best.getAttack()) {
                 best = p;
             }
@@ -76,12 +80,16 @@ public class App {
     }
 
     /**
-     * Returns the Pokémon with the lowest attack value.
+     * Returns the Pokémon with the lowest attack value from the provided list.
+     *
+     * @param list the list of Pokémon to search through
+     * @return the Pokémon object with the minimum attack statistic, or null if
+     *         the list is empty
      */
-    public static Data findPokemonWithMinAttack(ArrayList<Data> list) {
+    public static Pokemon findPokemonWithMinAttack(ArrayList<Pokemon> list) {
         if (list.isEmpty()) return null;
-        Data worst = list.get(0);
-        for (Data p : list) {
+        Pokemon worst = list.get(0);
+        for (Pokemon p : list) {
             if (p.getAttack() < worst.getAttack()) {
                 worst = p;
             }
@@ -92,12 +100,13 @@ public class App {
     /**
      * Computes the average attack stat grouped by primary type.
      *
-     * @return a map from type name to average attack
+     * @param list the list of Pokémon from which to compute averages
+     * @return a map from each primary type name to its average attack value
      */
-    public static Map<String, Double> computeAverageAttackByType(ArrayList<Data> list) {
+    public static Map<String, Double> computeAverageAttackByType(ArrayList<Pokemon> list) {
         Map<String, Integer> sum = new HashMap<>();
         Map<String, Integer> count = new HashMap<>();
-        for (Data p : list) {
+        for (Pokemon p : list) {
             String type = p.getType();
             if (type.isEmpty()) continue;
             sum.put(type, sum.getOrDefault(type, 0) + p.getAttack());
@@ -112,7 +121,10 @@ public class App {
 
     /**
      * Given the map of averages produced by {@link #computeAverageAttackByType},
-     * returns the type whose average is highest.
+     * returns the type whose average attack value is the highest.
+     *
+     * @param avgMap map of primary types to their average attack values
+     * @return the type name with the highest average, or null if the map is empty
      */
     public static String typeWithHighestAverage(Map<String, Double> avgMap) {
         String bestType = null;
