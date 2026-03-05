@@ -1,7 +1,7 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=22615674)
 # AP CSA Mini‑Project: Data Analysis with Arrays & File Input
 ### Using CSV Files • Arrays of Objects • Algorithms • Data Ethics & Quality
-<img width="618" height="177" alt="Screenshot 2026-03-04 9 33 53 PM" src="https://github.com/user-attachments/assets/457a8aa3-5f9f-44b9-ab77-a3b2ce6784d5" />
+
 
 ---
 
@@ -71,8 +71,7 @@ UML_Diagram.png (or UML_Diagram.pdf)
 **Source / Link:** Teacher‑provided CSV (original data from Pokémon franchise, e.g. Kaggle "Pokémon with Stats")
 
 **What this dataset contains (2–3 sentences):**  
-The file lists the first generation of Pokémon along with their primary and secondary types and base stats such as HP, Attack, Defense, and Speed.  
-Each row represents one Pokémon and includes a URL to its sprite and a short description.
+The file lists the first generation of Pokémon along with their primary and secondary types and base stats such as HP, Attack, Defense, and Speed. Each row represents one Pokémon and includes a URL to its sprite and a short description.
 
 
 ---
@@ -82,8 +81,7 @@ Each row represents one Pokémon and includes a URL to its sprite and a short de
 Your guiding question should be something you can answer using your dataset.
 
 **My guiding question:**  
-Which Pokémon type (using the "Type 1" column) has the highest average Attack stat?  
-This question is answerable by computing averages and grouping by type, and it leverages both numeric and categorical data from the CSV.
+Which Pokémon type has the highest average Attack stat? I can answer this question by computing averages and grouping by type of Pokémon. This guiding question uses both numeric and categorical data from the CSV file I uploaded.
 
 
 Examples:
@@ -108,7 +106,7 @@ You must create a class that represents **one row** of your dataset.
 
 ### ✏ Include your class diagram
 
-
+<img width="618" height="177" alt="Screenshot 2026-03-04 9 33 53 PM" src="https://github.com/user-attachments/assets/457a8aa3-5f9f-44b9-ab77-a3b2ce6784d5" />
 ---
 
 ## 📥 Step 4 — Read Your CSV File Using Scanner
@@ -142,14 +140,14 @@ You must write **at least two algorithms** to analyze your dataset.
 
 ### Required: Choose 2 or more algorithms
 - [ ] Minimum value of attribute  
-- [ ] Maximum value of attribute  
-- [ ] Average of attribute  
+- [X] Maximum value of attribute  
+- [X] Average of attribute  
 - [ ] Filter by category  
 - [ ] Count items matching a condition  
 
 **Algorithms I will implement:**
 
-1. Compute the average Attack value for each `type` and identify the type with the highest average.
+1. The average Attack value for each Pokémon type, and identify the type with the highest average.
 2. Find the Pokémon with the maximum Attack stat (overall) and the one with the minimum Attack stat.
 
 Optional extras:  
@@ -174,18 +172,13 @@ Include counts, min/max values, averages, or any other numbers your algorithms p
 -->
 **My findings:**
 - Loaded 151 Pokémon from the CSV file.
-- Computed average Attack by type; Fighting-type average ≈ 102.86, Fire-type ≈ 83.92, Water-type ≈ 69.89, etc.
+- Computed average Attack by type: Fighting-type average ≈ 102.86, Fire-type ≈ 83.92, Water-type ≈ 69.89, etc.
 - Highest-attack Pokémon overall: Dragonite (Attack: 134).
 - Lowest-attack Pokémon overall: Chansey (Attack: 5).
 
 **My answer to the guiding question:**
-Fighting-type Pokémon have the highest average Attack stat (about 102.86), so the "Fighting" category answers the question.
+Fighting-type Pokémon have the highest average Attack stat at 102.86, so the "Fighting" category answers the question.
 
-<!--
-Replace the example values above with your real program results. The answer should be a clear sentence stating the result.
--->
-
----
 
 ## 📝 Step 7 — Documentation Requirements
 
@@ -229,21 +222,10 @@ Write a short reflection (3–5 sentences):
 - How might incomplete or inaccurate data affect results?
 - How trustworthy are your insights?
 
-<!--
-Guiding questions are repeated here so you remember what to discuss when writing your own reflection.
--->
-<!--
-Use this space to reflect on data quality and ethics once your project is complete.
-Write in complete sentences. These are example sentences to illustrate what to write.
--->
-**My reflection:**
-The CSV appears well‑formatted, but several Pokémon have missing secondary types. I had to handle those because the dataset only includes the first generation, the averages might be biased toward older designs and don’t represent all Pokémon.  
-If a row were corrupted the program could crash, so validating input would improve robustness.  
-Overall the dataset is small and simple, so the insights are trustworthy within the scope of Generation I.
 
-<!--
-Modify or extend the reflection with your own observations about bias, missing data, or how quality affects conclusions.
--->
+**My reflection:**
+The CSV appears well‑formatted, but several Pokémon have missing secondary types. I had to handle those because the dataset only includes the first generation; the averages might be biased toward older designs and don’t represent all Pokémon. If a row were corrupted, the program could crash, so validating input would improve robustness. Overall the dataset is small and simple, so the insights are trustworthy within the scope of Generation I.
+
 
 ---
 
@@ -288,10 +270,7 @@ Allow the user to choose:
 <!--
 Mark boxes as you complete them; the only item left is the UML diagram (you said you would add it yourself).
 -->
-<!--
-Mark boxes as you complete them; the first two are already done since they appear above in the README.
--->
----
+
 
 Good luck, and have fun exploring your dataset! 🚀  
 You're now doing real data analysis — just like professional software engineers.
